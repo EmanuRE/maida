@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Mi Empresa</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <style>
+    main.features {
+      padding: 3rem 1rem;
+      background-color: #f9f9fb;
+      min-height: 80vh;
+    }
+    main.features .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    main.features h1 {
+      color: #002c5f;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 44, 95, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 44, 95, 0.2);
+    }
+    .feature-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid #002c5f;
+      transition: transform 0.4s ease;
+    }
+    .feature-card:hover img {
+      transform: scale(1.05);
+    }
+    .feature-card h3 {
+      color: #002c5f;
+      font-size: 1.4rem;
+      margin: 1rem 1rem 0.5rem;
+      flex-shrink: 0;
+    }
+    .feature-card p {
+      color: #555;
+      font-size: 1rem;
+      margin: 0 1rem 1.5rem;
+      flex-grow: 1;
+    }
+    .feature-card .btn {
+      display: inline-block;
+      background-color: #002c5f;
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.5rem;
+      margin: 0 1rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      align-self: start;
+    }
+    .feature-card .btn:hover {
+      background-color: #00509e;
+    }
+    @media (max-width: 480px) {
+      main.features h1 {
+        font-size: 1.8rem;
+      }
+      .feature-card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <img src="img/logo.png" alt="Logo" class="logo" />
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cotizar.html">Cotizar</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="features">
+    <div class="container">
+      <h1>Blog de Educación Tributaria</h1>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <img src="img/blog1.jpg" alt="Artículo 1" />
+          <h3>¿Qué es el IVA?</h3>
+          <p>Te explicamos de forma sencilla cómo funciona el Impuesto al Valor Agregado.</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
+
+        <div class="feature-card">
+          <img src="img/blog2.jpg" alt="Artículo 2" />
+          <h3>Declaraciones mensuales</h3>
+          <p>Todo lo que necesitas saber sobre las obligaciones fiscales mensuales.</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
+
+        <div class="feature-card">
+          <img src="img/blog3.jpg" alt="Artículo 3" />
+          <h3>Tips para emprendedores</h3>
+          <p>Recomendaciones para manejar tus finanzas desde el inicio de tu negocio.</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2025 MAIDA | Síguenos:
+      <a href="https://www.facebook.com/estefany.maida" target="_blank">Facebook</a> ·
+      <a href="https://www.instagram.com/teffa_salazar?igsh=MWN5cGdka2FjZWVocQ==" target="_blank">Instagram</a> ·
+      <a href="https://wa.me/50254585477" target="_blank">WhatsApp</a>
+    </p>
+  </footer>
+</body>
+</html>

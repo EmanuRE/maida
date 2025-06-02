@@ -1,0 +1,221 @@
+/* estilo.css */
+
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #002c5f;
+  color: #fff;
+  padding: 10px 0;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  height: 60px;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Cotizar Section */
+.cotizar-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.cotizar-section h1 {
+  color: #002c5f;
+  margin-bottom: 10px;
+}
+.cotizar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cotizar-form input,
+.cotizar-form select,
+.cotizar-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.cotizar-form .btn {
+  background-color: #005cbf;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.cotizar-form .btn:hover {
+  background-color: #004299;
+}
+
+/* Footer */
+.footer {
+  background-color: #002c5f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+.footer a {
+  color: #a6c8ff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Imagenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .menu a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.feature-card img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 10px;
+}
+
+.nosotros-contenido {
+  display: flex;
+  align-items: center;  /* centra verticalmente */
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nosotros-contenido .info {
+  flex: 1 1 65%;
+}
+
+.nosotros-logo {
+  flex: 1 1 25%;
+  text-align: right;
+}
+
+.nosotros-logo img {
+  width: 300px;  /* más grande */
+  height: auto;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .nosotros-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nosotros-logo {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+/* Solo afecta a servicios.html */
+.pagina-servicios .feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pagina-servicios .feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: #f9fbff; /* fondo ligeramente azul muy claro */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+
+  /* Para que la imagen quede a la derecha */
+  flex-direction: row; /* texto izquierda, imagen derecha */
+}
+
+/* El texto (h3 + ul) debe ocupar más espacio */
+.pagina-servicios .feature-card h3,
+.pagina-servicios .feature-card ul {
+  flex: 1;
+  margin: 0;
+}
+
+/* Imagen a la derecha */
+.pagina-servicios .feature-card img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+  order: 2; /* hace que la imagen aparezca al final (derecha) */
+}
+
+/* Aseguramos que el texto quede primero (izquierda) */
+.pagina-servicios .feature-card > :not(img) {
+  order: 1;
+}
+
+/* Responsive para móviles: apilar vertical con imagen arriba */
+@media (max-width: 768px) {
+  .pagina-servicios .feature-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pagina-servicios .feature-card img {
+    order: 0; /* imagen arriba */
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .pagina-servicios .feature-card > :not(img) {
+    order: 1;
+  }
+}

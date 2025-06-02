@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cotizar Servicios - Mi Empresa</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <style>
+    /* Ajustes específicos para el formulario cotizar */
+    main.cotizar-form form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    main.cotizar-form label {
+      font-weight: 600;
+      color: #002c5f;
+    }
+
+    main.cotizar-form input,
+    main.cotizar-form select,
+    main.cotizar-form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    main.cotizar-form button {
+      background-color: #005cbf;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 700;
+    }
+
+    main.cotizar-form button:hover {
+      background-color: #004299;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      main.cotizar-form form {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <img src="img/logo.png" alt="Logo" class="logo" />
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cotizar.html">Cotizar</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cotizar-form">
+    <div class="container">
+      <h1>Solicita tu Cotización</h1>
+      <p>Llena el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
+
+      <form id="formCotizar" onsubmit="return enviarWhatsApp(event)">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required />
+
+        <label for="tipo">Tipo de servicio:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="" disabled selected>Selecciona un servicio</option>
+          <option value="Servicios Contables">Servicios Contables</option>
+          <option value="Servicios Financieros">Servicios Financieros</option>
+          <option value="Servicios Administrativos">Servicios Administrativos</option>
+        </select>
+
+        <label for="mensaje">Detalles del servicio requerido:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar Cotización por WhatsApp</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2025 MAIDA | Síguenos:
+      <a href="https://www.facebook.com/estefany.maida" target="_blank">Facebook</a> ·
+      <a href="https://www.instagram.com/teffa_salazar?igsh=MWN5cGdka2FjZWVocQ==" target="_blank">Instagram</a> ·
+      <a href="https://wa.me/50254585477" target="_blank">WhatsApp</a>
+    </p>
+  </footer>
+
+  <script>
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const tipo = document.getElementById('tipo').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if (!nombre || !email || !telefono || !tipo || !mensaje) {
+        alert('Por favor, completa todos los campos.');
+        return false;
+      }
+
+      // Número de WhatsApp destinatario con código internacional (sin + ni espacios)
+      const numeroWhatsApp = '50254585477';
+
+      // Construcción del mensaje (con salto de línea %0A)
+      let texto = `*Nueva solicitud de cotización*%0A`;
+      texto += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
+      texto += `*Email:* ${encodeURIComponent(email)}%0A`;
+      texto += `*Teléfono:* ${encodeURIComponent(telefono)}%0A`;
+      texto += `*Tipo de servicio:* ${encodeURIComponent(tipo)}%0A`;
+      texto += `*Detalles:* ${encodeURIComponent(mensaje)}`;
+
+      // URL para abrir WhatsApp
+      const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+
+      // Abrir WhatsApp en nueva pestaña
+      window.open(url, '_blank');
+
+      // Opcional: resetear formulario después de enviar
+      document.getElementById('formCotizar').reset();
+
+      return false;
+    }
+  </script>
+</body>
+</html>
