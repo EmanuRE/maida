@@ -1,0 +1,19 @@
+# Redirecciones para URLs amigables (sin .html)
+/               /maida/index.html      200
+/maida/         /maida/index.html      200
+
+# Páginas principales
+/maida/nosotros       /maida/nosotros.html       200
+/maida/nosotros/      /maida/nosotros.html       200
+
+/maida/servicios      /maida/servicios.html      200
+/maida/servicios/     /maida/servicios.html      200
+
+/maida/cotizar        /maida/cotizar.html        200
+/maida/cotizar/       /maida/cotizar.html        200
+
+/maida/blog           /maida/blog.html           200
+/maida/blog/          /maida/blog.html           200
+
+/maida/contacto       /maida/contacto.html       200
+/maida/contacto/      /maida/contacto.html       200
