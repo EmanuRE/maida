@@ -1,156 +1,459 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contáctanos - Mi Empresa</title>
-  <link rel="stylesheet" href="css/estilo.css" />
-  <!-- Font Awesome CDN para íconos -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papbRdWjQjyPhO2K6iApl5BB2gDhq1TbFbT7ogdmXMezOKxU0HwgID55cQ3FvfQ9TR88nLOQCuRZPQbBBg1Ryg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - MAIDA Soluciones Contables</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Contáctanos para asesoría contable y financiera personalizada en Guatemala">
   <style>
-    main.container {
+    /* Estilos para la sección hero de contacto */
+    .contacto-hero {
+      background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.9)), url('../img/bg-contacto.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 6rem 0 4rem;
       text-align: center;
-      padding: 3rem 1rem;
-      max-width: 600px;
-      margin: 2rem auto;
-      background-color: #ffffff;
+    }
+    
+    .contacto-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contacto-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* Contenedor principal */
+    .contacto-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    
+    /* Formulario de contacto */
+    .contacto-form {
+      background: white;
+      padding: 3rem;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 44, 95, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    main h1 {
-      color: #002c5f;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    main p.intro {
-      font-size: 1.1rem;
+    
+    .contacto-form h2 {
+      color: #002b5c;
       margin-bottom: 2rem;
-      color: #444;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      padding: 0;
-      list-style: none;
-      margin: 0;
+    
+    .contacto-form h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #005aa7;
     }
-    .contact-links li a {
-      text-decoration: none;
-      color: #002c5f;
-      font-size: 1.3rem;
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
       font-weight: 600;
+      color: #002b5c;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.3s;
+    }
+    
+    .form-control:focus {
+      border-color: #005aa7;
+      box-shadow: 0 0 0 3px rgba(0, 90, 167, 0.1);
+      outline: none;
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn-enviar {
+      background-color: #005aa7;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 700;
+      width: 100%;
+    }
+    
+    .btn-enviar:hover {
+      background-color: #00458e;
+      transform: translateY(-2px);
+    }
+    
+    /* Información de contacto */
+    .contacto-info {
+      padding-top: 1rem;
+    }
+    
+    .contacto-info h2 {
+      color: #002b5c;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .contacto-info h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #005aa7;
+    }
+    
+    .contacto-detalle {
+      margin-bottom: 3rem;
+    }
+    
+    .contacto-detalle p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      color: #555;
+    }
+    
+    .contacto-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contacto-icon {
+      background: #f0f4f8;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.2rem;
+      justify-content: center;
+      margin-right: 1.5rem;
+      color: #005aa7;
+      font-size: 1.2rem;
+    }
+    
+    .contacto-text h3 {
+      color: #002b5c;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contacto-text a {
+      color: #005aa7;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    
+    .contacto-text a:hover {
+      color: #003d7a;
+      text-decoration: underline;
+    }
+    
+    .horario-atencion {
+      background: #f8fafc;
+      padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,44,95,0.1);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      background-color: #f0f5fb;
-      cursor: pointer;
+      margin-top: 2rem;
     }
-    .contact-links li a .fa-brands {
-      font-size: 1.6rem;
+    
+    .horario-atencion h3 {
+      color: #002b5c;
+      margin-bottom: 1rem;
     }
-    /* Colores para cada red */
-    .contact-links li a.whatsapp {
-      color: #25d366;
-      background-color: #e6f7ee;
+    
+    .horario-atencion ul {
+      list-style: none;
+      padding: 0;
     }
-    .contact-links li a.whatsapp:hover {
-      background-color: #25d366;
-      color: #fff;
+    
+    .horario-atencion li {
+      margin-bottom: 0.5rem;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
     }
-    .contact-links li a.facebook {
-      color: #1877f2;
-      background-color: #e7f0fd;
+    
+    .horario-atencion .dias {
+      font-weight: 600;
     }
-    .contact-links li a.facebook:hover {
-      background-color: #1877f2;
-      color: #fff;
+    
+    /* Redes sociales */
+    .redes-sociales {
+      margin-top: 3rem;
     }
-    .contact-links li a.instagram {
-      color: #e4405f;
+    
+    .redes-sociales h3 {
+      color: #002b5c;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: rgb(0, 21, 207);
+      font-size: 1.3rem;
+      transition: transform 0.3s;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+    }
+    
+    .whatsapp {
+      background-color: #25D366;
+    }
+    
+    .facebook {
+      background-color: #1877F2;
+    }
+    
+    .instagram {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      position: relative;
     }
-    .contact-links li a.instagram::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      border-radius: 8px;
-      z-index: -1;
-    }
-    .contact-links li a.instagram:hover {
-      color: #fff;
-      background: #bc1888;
-      background-clip: initial;
-      -webkit-background-clip: initial;
-      position: relative;
-    }
-    @media (max-width: 480px) {
-      .contact-links {
-        flex-direction: column;
-        gap: 1.2rem;
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .contacto-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
       }
-      main.container {
-        margin: 1rem;
-        padding: 2rem 1rem;
+      
+      .contacto-hero h1 {
+        font-size: 2.4rem;
+      }
+      
+      .contacto-form {
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .contacto-hero {
+        padding: 5rem 0 3rem;
+      }
+      
+      .contacto-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contacto-hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contacto-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .contacto-form {
+        padding: 1.5rem;
+      }
+      
+      .social-links {
+        justify-content: center;
       }
     }
   </style>
 </head>
-<body>
+<body class="pagina-contacto">
   <header class="navbar">
     <div class="container">
-      <img src="img/logo.png" alt="Logo" class="logo" />
+      <a href="index.html">
+        <img src="img/logo.png" alt="Logo MAIDA" class="logo">
+      </a>
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
         <a href="cotizar.html">Cotizar</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="blog.html">Blog</a>
-        <a href="contacto.html">Contáctanos</a>
+        <a href="contacto.html" class="active">Contáctanos</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h1>Contáctanos</h1>
-    <p class="intro">Estamos aquí para ayudarte. Contáctanos vía WhatsApp, Facebook o Instagram:</p>
-    <ul class="contact-links">
-      <li>
-        <a href="https://wa.me/50254585477" target="_blank" class="whatsapp" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/estefany.maida" target="_blank" class="facebook" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i> Facebook
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/teffa_salazar?igsh=MWN5cGdka2FjZWVocQ==" target="_blank" class="instagram" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i> Instagram
-        </a>
-      </li>
-    </ul>
+  <section class="contacto-hero">
+    <div class="container">
+      <h1>¿Cómo podemos ayudarte?</h1>
+      <p>Estamos listos para responder tus preguntas y brindarte la asesoría que necesitas</p>
+    </div>
+  </section>
+
+  <main class="contacto-container">
+    <div class="contacto-form">
+      <h2>Envíanos un mensaje</h2>
+      <form id="formContacto" action="#" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre completo*</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Correo electrónico*</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio" class="form-control">
+            <option value="">Seleccione un servicio</option>
+            <option value="contabilidad">Contabilidad</option>
+            <option value="impuestos">Impuestos</option>
+            <option value="finanzas">Asesoría Financiera</option>
+            <option value="administrativo">Servicios Administrativos</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="mensaje">Mensaje*</label>
+          <textarea id="mensaje" name="mensaje" class="form-control" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-enviar">
+          <i class="fas fa-paper-plane"></i> Enviar mensaje
+        </button>
+      </form>
+    </div>
+    
+    <div class="contacto-info">
+      <h2>Información de contacto</h2>
+      
+      <div class="contacto-detalle">
+        <p>Estamos comprometidos a brindarte la mejor atención y asesoría personalizada para tus necesidades contables y financieras.</p>
+      </div>
+      
+      <div class="contacto-method">
+        <div class="contacto-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="contacto-text">
+          <h3>Teléfono</h3>
+          <a href="tel:+50254585477">+502 5458 5477</a>
+        </div>
+      </div>
+      
+      <div class="contacto-method">
+        <div class="contacto-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contacto-text">
+          <h3>Correo electrónico</h3>
+          <a href="mailto:info@maida.com">info@maida.com</a>
+        </div>
+      </div>
+      
+      <div class="horario-atencion">
+        <h3>Horario de atención</h3>
+        <ul>
+          <li><span class="dias">Lunes - Viernes:</span> 8:00 AM - 5:00 PM</li>
+          <li><span class="dias">Sábados:</span> 9:00 AM - 12:00 PM</li>
+          <li><span class="dias">Domingos:</span> Cerrado</li>
+        </ul>
+      </div>
+
+    </div>
   </main>
 
   <footer class="footer">
-    <p>© 2025 MAIDA | Todos los derechos reservados</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="img/logo.png" alt="MAIDA" class="footer-logo">
+          <p>Soluciones contables y financieras para el crecimiento de tu negocio.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="servicios.html#contables">Contables</a></li>
+            <li><a href="servicios.html#financieros">Financieros</a></li>
+            <li><a href="servicios.html#administrativos">Administrativos</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> info@maida.com</li>
+            <li><i class="fas fa-phone"></i> +502 5458 5477</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MAIDA. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/estefany.maida" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/teffa_salazar" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/50254585477" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Validación básica del formulario
+    document.getElementById('formContacto').addEventListener('submit', function(e) {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      
+      if (!nombre || !email || !mensaje) {
+        e.preventDefault();
+        alert('Por favor complete todos los campos obligatorios (*)');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,144 +1,396 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog - Mi Empresa</title>
-  <link rel="stylesheet" href="css/estilo.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Educación Financiera - MAIDA</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Artículos educativos sobre contabilidad, finanzas y gestión empresarial para emprendedores y pymes">
   <style>
-    main.features {
-      padding: 3rem 1rem;
-      background-color: #f9f9fb;
-      min-height: 80vh;
-    }
-    main.features .container {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* Estilos principales del blog */
+    .blog-hero {
+      background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.9)), url('../img/bg-blog.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 6rem 0 4rem;
       text-align: center;
     }
-    main.features h1 {
-      color: #002c5f;
-      margin-bottom: 2.5rem;
-      font-weight: 700;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
+    
+    .blog-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
     }
-    .feature-grid {
+    
+    .blog-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
     }
-    .feature-card {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 44, 95, 0.1);
+    
+    .blog-card {
+      background: white;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 44, 95, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
     }
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 44, 95, 0.2);
+    
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 44, 95, 0.15);
     }
-    .feature-card img {
+    
+    .blog-card-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .blog-card img {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
-      border-bottom: 3px solid #002c5f;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease;
     }
-    .feature-card:hover img {
+    
+    .blog-card:hover img {
       transform: scale(1.05);
     }
-    .feature-card h3 {
-      color: #002c5f;
-      font-size: 1.4rem;
-      margin: 1rem 1rem 0.5rem;
-      flex-shrink: 0;
+    
+    .blog-card-content {
+      padding: 1.8rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-    .feature-card p {
+    
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .blog-card-meta i {
+      margin-right: 0.5rem;
+      color: #005aa7;
+    }
+    
+    .blog-card h3 {
+      color: #002b5c;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    
+    .blog-card p {
       color: #555;
-      font-size: 1rem;
-      margin: 0 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
       flex-grow: 1;
     }
-    .feature-card .btn {
-      display: inline-block;
-      background-color: #002c5f;
+    
+    .blog-card .btn {
+      align-self: flex-start;
+      background: #005aa7;
       color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
       text-decoration: none;
-      padding: 0.6rem 1.5rem;
-      margin: 0 1rem 1.5rem;
-      border-radius: 25px;
       font-weight: 600;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-      align-self: start;
+      transition: background 0.3s ease;
+      margin-top: auto;
     }
-    .feature-card .btn:hover {
-      background-color: #00509e;
+    
+    .blog-card .btn:hover {
+      background: #00458e;
     }
+    
+    .blog-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+    }
+    
+    .category-btn {
+      padding: 0.6rem 1.5rem;
+      background: #f0f4f8;
+      border-radius: 30px;
+      color: #002b5c;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid #d0dce8;
+    }
+    
+    .category-btn:hover, .category-btn.active {
+      background: #005aa7;
+      color: white;
+      border-color: #005aa7;
+    }
+    
+    /* Paginación */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+      gap: 0.5rem;
+    }
+    
+    .pagination a {
+      padding: 0.8rem 1.2rem;
+      background: white;
+      border-radius: 6px;
+      color: #002b5c;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #d0dce8;
+      transition: all 0.3s ease;
+    }
+    
+    .pagination a:hover, .pagination a.active {
+      background: #005aa7;
+      color: white;
+      border-color: #005aa7;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .blog-hero h1 {
+        font-size: 2.4rem;
+      }
+      
+      .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .blog-hero {
+        padding: 5rem 0 3rem;
+      }
+      
+      .blog-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .blog-hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+      
+      .blog-container {
+        padding: 3rem 1.5rem;
+      }
+      
+      .blog-card-img {
+        height: 180px;
+      }
+    }
+    
     @media (max-width: 480px) {
-      main.features h1 {
+      .blog-hero h1 {
         font-size: 1.8rem;
       }
-      .feature-card img {
-        height: 150px;
+      
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-categories {
+        justify-content: flex-start;
       }
     }
   </style>
 </head>
-<body>
+<body class="pagina-blog">
   <header class="navbar">
     <div class="container">
-      <img src="img/logo.png" alt="Logo" class="logo" />
+      <a href="index.html">
+        <img src="img/logo.png" alt="Logo MAIDA" class="logo">
+      </a>
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
         <a href="cotizar.html">Cotizar</a>
         <a href="nosotros.html">Nosotros</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class="active">Blog</a>
         <a href="contacto.html">Contáctanos</a>
       </nav>
     </div>
   </header>
 
-  <main class="features">
+  <section class="blog-hero">
     <div class="container">
-      <h1>Blog de Educación Tributaria</h1>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <img src="img/blog1.jpg" alt="Artículo 1" />
-          <h3>¿Qué es el IVA?</h3>
-          <p>Te explicamos de forma sencilla cómo funciona el Impuesto al Valor Agregado.</p>
-          <a href="#" class="btn">Leer más</a>
-        </div>
+      <h1>Educación Financiera y Tributaria</h1>
+      <p>Consejos prácticos y artículos especializados para manejar mejor tus finanzas y cumplimientos fiscales</p>
+    </div>
+  </section>
 
-        <div class="feature-card">
-          <img src="img/blog2.jpg" alt="Artículo 2" />
-          <h3>Declaraciones mensuales</h3>
-          <p>Todo lo que necesitas saber sobre las obligaciones fiscales mensuales.</p>
-          <a href="#" class="btn">Leer más</a>
+  <main class="blog-container">
+    <div class="blog-categories">
+      <a href="#" class="category-btn active">Todos</a>
+      <a href="#" class="category-btn">Impuestos</a>
+      <a href="#" class="category-btn">Contabilidad</a>
+      <a href="#" class="category-btn">Finanzas</a>
+      <a href="#" class="category-btn">Emprendimiento</a>
+    </div>
+    
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog1.jpg" alt="Conceptos básicos de IVA" loading="lazy">
         </div>
-
-        <div class="feature-card">
-          <img src="img/blog3.jpg" alt="Artículo 3" />
-          <h3>Tips para emprendedores</h3>
-          <p>Recomendaciones para manejar tus finanzas desde el inicio de tu negocio.</p>
-          <a href="#" class="btn">Leer más</a>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 15 Mayo 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 5 min lectura
+          </div>
+          <h3>Guía completa sobre el IVA en Guatemala</h3>
+          <p>Todo lo que necesitas saber sobre el Impuesto al Valor Agregado: tasas aplicables, declaraciones y obligaciones para contribuyentes.</p>
+          <a href="articulo-iva.html" class="btn">Leer artículo</a>
         </div>
-      </div>
+      </article>
+      
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog2.jpg" alt="Declaraciones fiscales" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 2 Junio 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 7 min lectura
+          </div>
+          <h3>Cómo preparar tus declaraciones mensuales correctamente</h3>
+          <p>Evita errores comunes y multas con esta guía paso a paso para presentar tus declaraciones fiscales ante la SAT.</p>
+          <a href="articulo-declaraciones.html" class="btn">Leer artículo</a>
+        </div>
+      </article>
+      
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog3.jpg" alt="Finanzas para emprendedores" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 18 Junio 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 8 min lectura
+          </div>
+          <h3>10 Errores financieros que todo emprendedor debe evitar</h3>
+          <p>Aprende de los errores comunes que cometen los pequeños negocios y cómo mantener finanzas saludables desde el inicio.</p>
+          <a href="articulo-emprendedores.html" class="btn">Leer artículo</a>
+        </div>
+      </article>
+      
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog1.jpg" alt="Deducción de gastos" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 5 Julio 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 6 min lectura
+          </div>
+          <h3>Qué gastos son deducibles de impuestos para tu negocio</h3>
+          <p>Maximiza tus deducciones fiscales con esta lista de gastos empresariales que puedes restar de tus ingresos gravables.</p>
+          <a href="articulo-deducibles.html" class="btn">Leer artículo</a>
+        </div>
+      </article>
+      
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog2.jpg" alt="Planificación financiera" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 22 Julio 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 10 min lectura
+          </div>
+          <h3>Planificación fiscal estratégica para el cierre del año</h3>
+          <p>Acciones clave que debes tomar en el último trimestre para optimizar tu carga impositiva y prepararte para el próximo año.</p>
+          <a href="articulo-planificacion.html" class="btn">Leer artículo</a>
+        </div>
+      </article>
+      
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="img/blog3.jpg" alt="Sistema contable" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <i class="far fa-calendar-alt"></i> 10 Agosto 2023
+            <i class="far fa-clock" style="margin-left: 1rem;"></i> 9 min lectura
+          </div>
+          <h3>Cómo elegir el mejor sistema contable para tu empresa</h3>
+          <p>Comparativa de las mejores opciones de software contable según el tamaño y necesidades de tu negocio en Guatemala.</p>
+          <a href="articulo-sistemas.html" class="btn">Leer artículo</a>
+        </div>
+      </article>
+    </div>
+    
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#"><i class="fas fa-chevron-right"></i></a>
     </div>
   </main>
 
   <footer class="footer">
-    <p>
-      © 2025 MAIDA | Síguenos:
-      <a href="https://www.facebook.com/estefany.maida" target="_blank">Facebook</a> ·
-      <a href="https://www.instagram.com/teffa_salazar?igsh=MWN5cGdka2FjZWVocQ==" target="_blank">Instagram</a> ·
-      <a href="https://wa.me/50254585477" target="_blank">WhatsApp</a>
-    </p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="img/logo.png" alt="MAIDA" class="footer-logo">
+          <p>Soluciones contables y financieras para el crecimiento de tu negocio.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="servicios.html#contables">Contables</a></li>
+            <li><a href="servicios.html#financieros">Financieros</a></li>
+            <li><a href="servicios.html#administrativos">Administrativos</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> info@maida.com</li>
+            <li><i class="fas fa-phone"></i> +502 5458 5477</li>
+            <li><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MAIDA. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/estefany.maida" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/teffa_salazar" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/50254585477" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,68 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cotizar Servicios - Mi Empresa</title>
-  <link rel="stylesheet" href="css/estilo.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizar Servicios - MAIDA</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Solicita una cotización personalizada de nuestros servicios contables, financieros y administrativos">
   <style>
-    /* Ajustes específicos para el formulario cotizar */
-    main.cotizar-form form {
-      max-width: 600px;
+    /* Estilos específicos para la página de cotización */
+    .cotizar-hero {
+      background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.9)), url('../img/bg-cotizar.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .cotizar-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cotizar-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
     }
-
-    main.cotizar-form label {
+    
+    .cotizar-form {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 4rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
       font-weight: 600;
-      color: #002c5f;
+      color: #002b5c;
     }
-
-    main.cotizar-form input,
-    main.cotizar-form select,
-    main.cotizar-form textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
       font-size: 1rem;
-      resize: vertical;
-      font-family: inherit;
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.3s;
     }
-
-    main.cotizar-form button {
-      background-color: #005cbf;
+    
+    .form-control:focus {
+      border-color: #005aa7;
+      box-shadow: 0 0 0 3px rgba(0, 90, 167, 0.1);
+      outline: none;
+    }
+    
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .btn-whatsapp {
+      background-color: #25D366;
       color: white;
       border: none;
-      padding: 14px;
+      padding: 15px 25px;
       font-size: 1.1rem;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s;
       font-weight: 700;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
-
-    main.cotizar-form button:hover {
-      background-color: #004299;
+    
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
     }
-
+    
+    .form-note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
     /* Responsive */
+    @media (max-width: 768px) {
+      .cotizar-hero {
+        padding: 3rem 1rem;
+      }
+      
+      .cotizar-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .cotizar-form {
+        padding: 1.5rem;
+      }
+    }
+    
     @media (max-width: 480px) {
-      main.cotizar-form form {
-        padding: 0 15px;
+      .cotizar-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .cotizar-hero p {
+        font-size: 1rem;
+      }
+      
+      .btn-whatsapp {
+        padding: 12px 20px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
-<body>
+<body class="pagina-cotizar">
   <header class="navbar">
     <div class="container">
-      <img src="img/logo.png" alt="Logo" class="logo" />
+      <a href="index.html">
+        <img src="img/logo.png" alt="Logo MAIDA" class="logo">
+      </a>
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
-        <a href="cotizar.html">Cotizar</a>
+        <a href="cotizar.html" class="active">Cotizar</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="blog.html">Blog</a>
         <a href="contacto.html">Contáctanos</a>
@@ -70,83 +150,168 @@
     </div>
   </header>
 
-  <main class="cotizar-form">
+  <section class="cotizar-hero">
     <div class="container">
-      <h1>Solicita tu Cotización</h1>
-      <p>Llena el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
-
-      <form id="formCotizar" onsubmit="return enviarWhatsApp(event)">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required />
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required />
-
-        <label for="tipo">Tipo de servicio:</label>
-        <select id="tipo" name="tipo" required>
-          <option value="" disabled selected>Selecciona un servicio</option>
-          <option value="Servicios Contables">Servicios Contables</option>
-          <option value="Servicios Financieros">Servicios Financieros</option>
-          <option value="Servicios Administrativos">Servicios Administrativos</option>
-        </select>
-
-        <label for="mensaje">Detalles del servicio requerido:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-        <button type="submit">Enviar Cotización por WhatsApp</button>
-      </form>
+      <h1>Solicita tu Cotización Personalizada</h1>
+      <p>Completa el formulario y te enviaremos una propuesta adaptada a tus necesidades</p>
     </div>
+  </section>
+
+  <main class="container">
+    <form id="formCotizar" class="cotizar-form" onsubmit="return enviarWhatsApp(event)">
+      <div class="form-group">
+        <label for="nombre">Nombre completo*</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="empresa">Empresa (opcional)</label>
+        <input type="text" id="empresa" name="empresa" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Correo electrónico*</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="telefono">Teléfono*</label>
+        <input type="tel" id="telefono" name="telefono" class="form-control" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="tipo">Tipo de servicio*</label>
+        <select id="tipo" name="tipo" class="form-control" required>
+          <option value="" disabled selected>Selecciona un servicio</option>
+          <option value="Contabilidad General">Contabilidad General</option>
+          <option value="Declaraciones Fiscales">Declaraciones Fiscales</option>
+          <option value="Auditoría Contable">Auditoría Contable</option>
+          <option value="Asesoría Financiera">Asesoría Financiera</option>
+          <option value="Planeación Fiscal">Planeación Fiscal</option>
+          <option value="Gestión Administrativa">Gestión Administrativa</option>
+          <option value="Paquete Integral">Paquete Integral</option>
+          <option value="Otro">Otro servicio</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="mensaje">Describe tus necesidades*</label>
+        <textarea id="mensaje" name="mensaje" class="form-control" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+      </button>
+      
+      <p class="form-note">
+        * Campos obligatorios. También puedes contactarnos directamente al 
+        <a href="https://wa.me/50254585477" target="_blank">+502 5458 5477</a>
+      </p>
+    </form>
   </main>
 
   <footer class="footer">
-    <p>
-      © 2025 MAIDA | Síguenos:
-      <a href="https://www.facebook.com/estefany.maida" target="_blank">Facebook</a> ·
-      <a href="https://www.instagram.com/teffa_salazar?igsh=MWN5cGdka2FjZWVocQ==" target="_blank">Instagram</a> ·
-      <a href="https://wa.me/50254585477" target="_blank">WhatsApp</a>
-    </p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="img/logo.png" alt="MAIDA" class="footer-logo">
+          <p>Soluciones contables y financieras para el crecimiento de tu negocio.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="servicios.html#contables">Contables</a></li>
+            <li><a href="servicios.html#financieros">Financieros</a></li>
+            <li><a href="servicios.html#administrativos">Administrativos</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> info@maida.com</li>
+            <li><i class="fas fa-phone"></i> +502 5458 5477</li>
+            <li><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MAIDA. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/estefany.maida" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/teffa_salazar" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/50254585477" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
     function enviarWhatsApp(event) {
       event.preventDefault();
-
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const tipo = document.getElementById('tipo').value;
-      const mensaje = document.getElementById('mensaje').value.trim();
-
-      if (!nombre || !email || !telefono || !tipo || !mensaje) {
-        alert('Por favor, completa todos los campos.');
+      
+      // Validación básica
+      const requiredFields = ['nombre', 'email', 'telefono', 'tipo', 'mensaje'];
+      let isValid = true;
+      
+      requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (!field.value.trim()) {
+          field.style.borderColor = 'red';
+          isValid = false;
+        } else {
+          field.style.borderColor = '#ddd';
+        }
+      });
+      
+      if (!isValid) {
+        alert('Por favor completa todos los campos obligatorios.');
         return false;
       }
-
-      // Número de WhatsApp destinatario con código internacional (sin + ni espacios)
-      const numeroWhatsApp = '50254585477';
-
-      // Construcción del mensaje (con salto de línea %0A)
-      let texto = `*Nueva solicitud de cotización*%0A`;
-      texto += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
-      texto += `*Email:* ${encodeURIComponent(email)}%0A`;
-      texto += `*Teléfono:* ${encodeURIComponent(telefono)}%0A`;
-      texto += `*Tipo de servicio:* ${encodeURIComponent(tipo)}%0A`;
-      texto += `*Detalles:* ${encodeURIComponent(mensaje)}`;
-
-      // URL para abrir WhatsApp
-      const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-
-      // Abrir WhatsApp en nueva pestaña
-      window.open(url, '_blank');
-
-      // Opcional: resetear formulario después de enviar
+      
+      // Obtener valores del formulario
+      const formData = {
+        nombre: document.getElementById('nombre').value.trim(),
+        empresa: document.getElementById('empresa').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
+        tipo: document.getElementById('tipo').value,
+        mensaje: document.getElementById('mensaje').value.trim()
+      };
+      
+      // Formatear mensaje para WhatsApp
+      const message = `*Nueva Solicitud de Cotización MAIDA*%0A%0A` +
+        `*Nombre:* ${encodeURIComponent(formData.nombre)}%0A` +
+        (formData.empresa ? `*Empresa:* ${encodeURIComponent(formData.empresa)}%0A` : '') +
+        `*Email:* ${encodeURIComponent(formData.email)}%0A` +
+        `*Teléfono:* ${encodeURIComponent(formData.telefono)}%0A` +
+        `*Servicio solicitado:* ${encodeURIComponent(formData.tipo)}%0A%0A` +
+        `*Detalles:*%0A${encodeURIComponent(formData.mensaje)}%0A%0A` +
+        `*Fecha:* ${new Date().toLocaleDateString('es-GT')}`;
+      
+      // Número de WhatsApp (sin símbolos)
+      const phoneNumber = '50254585477';
+      
+      // Abrir WhatsApp
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+      
+      // Opcional: Resetear formulario
       document.getElementById('formCotizar').reset();
-
+      
+      // Opcional: Mostrar mensaje de confirmación
+      alert('¡Gracias! Serás redirigido a WhatsApp para completar tu solicitud.');
+      
       return false;
     }
+    
+    // Mejorar experiencia en móviles
+    document.addEventListener('DOMContentLoaded', function() {
+      const telInput = document.getElementById('telefono');
+      if (telInput) {
+        telInput.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/[^0-9+]/g, '');
+        });
+      }
+    });
   </script>
 </body>
 </html>
