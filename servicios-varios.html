@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Varios - MAIDA Soluciones Integrales</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Servicios adicionales de trámites, registros y gestiones para empresas en Guatemala">
+  <style>
+    /* Estilos específicos para servicios-varios */
+    .servicios-hero {
+      background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.9)), url('../img/bg-servicios-varios.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+    
+    .servicios-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .servicios-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .servicio-categoria {
+      margin-bottom: 4rem;
+    }
+    
+    .servicio-categoria h2 {
+      color: #002b5c;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #005aa7;
+    }
+    
+    .servicio-item {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 4px solid #005aa7;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .servicio-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .servicio-icon {
+      color: #005aa7;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      min-width: 30px;
+    }
+    
+    .servicio-text h3 {
+      color: #002b5c;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+    
+    .cta-servicios {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .btn-cotizar {
+      background: #005aa7;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    
+    .btn-cotizar:hover {
+      background: #00458e;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .servicios-hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .servicios-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .servicio-categoria h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body class="pagina-servicios-varios">
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html">
+        <img src="img/logo.png" alt="Logo MAIDA" class="logo">
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="servicios-varios.html" class="active">Servicios Varios</a>
+        <a href="cotizar.html">Cotizar</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="servicios-hero">
+    <div class="container">
+      <h1>Servicios Varios y Trámites Especializados</h1>
+      <p>Gestionamos todos los trámites administrativos, fiscales y legales que tu empresa necesita</p>
+    </div>
+  </section>
+
+  <main class="servicios-container">
+    <div class="servicios-grid">
+      <!-- Sección Trámites SAT -->
+      <div class="servicio-categoria">
+        <h2><i class="fas fa-file-invoice-dollar"></i> Trámites SAT</h2>
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-sync-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Actualización de RTU</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-user-plus"></i></div>
+          <div class="servicio-text">
+            <h3>Creación de usuario Agencia Virtual</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-store"></i></div>
+          <div class="servicio-text">
+            <h3>Inscripción de Negocios ante la SAT y Registro Mercantil</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-signature"></i></div>
+          <div class="servicio-text">
+            <h3>Cambio de nombre comercial</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Cambio de dirección comercial y/o fiscal de una empresa</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-edit"></i></div>
+          <div class="servicio-text">
+            <h3>Inscripción De Modificación De Cambio O Ampliación De Objeto De Empresa</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-book"></i></div>
+          <div class="servicio-text">
+            <h3>Habilitación de libros</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-file-invoice"></i></div>
+          <div class="servicio-text">
+            <h3>Facturación electrónica</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Presentación de declaraciones de impuestos</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-times-circle"></i></div>
+          <div class="servicio-text">
+            <h3>Cancelación de Negocios</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección Laboral -->
+      <div class="servicio-categoria">
+        <h2><i class="fas fa-briefcase"></i> Trámites Laborales</h2>
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-file-contract"></i></div>
+          <div class="servicio-text">
+            <h3>Registro electrónico de contratos individuales de trabajo</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <div class="servicio-text">
+            <h3>Habilitación de libro electrónico de salarios</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-hard-hat"></i></div>
+          <div class="servicio-text">
+            <h3>Trámites de seguridad ocupacional</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-hospital-user"></i></div>
+          <div class="servicio-text">
+            <h3>Inscripción patronal al Régimen de Seguridad Social (IGSS)</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="servicio-text">
+            <h3>Elaboración y pago de planillas electrónicas</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-id-card"></i></div>
+          <div class="servicio-text">
+            <h3>Solicitud de credencial de patrono al IRTRA</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-id-badge"></i></div>
+          <div class="servicio-text">
+            <h3>Solicitud de carné de trabajadores al IRTRA</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección Vehicular y Otros -->
+      <div class="servicio-categoria">
+        <h2><i class="fas fa-car"></i> Trámites Vehiculares y Otros</h2>
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Traspasos de vehículos</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-tags"></i></div>
+          <div class="servicio-text">
+            <h3>Cambio de placas</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-leaf"></i></div>
+          <div class="servicio-text">
+            <h3>Trámites de Licencias ambientales</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-power-off"></i></div>
+          <div class="servicio-text">
+            <h3>Inactivación de vehículos</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Pago de calcomanía en línea</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="servicio-text">
+            <h3>Antecedentes Penales y Policiacos en Línea</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-baby"></i></div>
+          <div class="servicio-text">
+            <h3>Certificado de Nacimiento en línea</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <div class="servicio-text">
+            <h3>Asesoría en rentas de trabajo</h3>
+          </div>
+        </div>
+        
+        <div class="servicio-item">
+          <div class="servicio-icon"><i class="fas fa-file-signature"></i></div>
+          <div class="servicio-text">
+            <h3>Constancias de ingresos</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-servicios">
+      <a href="cotizar.html" class="btn-cotizar">
+        <i class="fas fa-paper-plane"></i> Solicitar Cotización
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="img/logo.png" alt="MAIDA" class="footer-logo">
+          <p>Soluciones contables y financieras para el crecimiento de tu negocio.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="servicios.html">Principales</a></li>
+            <li><a href="servicios-varios.html">Servicios Varios</a></li>
+            <li><a href="cotizar.html">Cotización</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> contabilidadmaida@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +502 35752338</li>
+            <li><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MAIDA. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61576567342988" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/servicios_empresariales_maida?igsh=MWFkZTM5aHN4Z3dlcw==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/50235752338" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
